@@ -1,0 +1,13 @@
+-- SQLite
+CREATE TABLE clients(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+email VARCHAR(100),
+phone VARCHAR(30)
+);
+
+DROP TABLE clients;
+
+ALTER TABLE clients
+ADD COLUMN address TEXT;

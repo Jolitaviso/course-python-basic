@@ -36,4 +36,5 @@ def generate_primes(end, start=1):
             primes.append(num)
     return primes
 
-print(len(generate_primes(10000000)))
+print(len(generate_primes(100)))
+input("Press ENTER to exit")
