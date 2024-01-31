@@ -1,0 +1,29 @@
+--CREATE TABLE customer 
+CREATE TABLE IF NOT EXISTS customer (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL
+);
+
+--CREATE TABLE product 
+CREATE TABLE IF NOT EXISTS product (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(18,2) NOT NULL
+);
+
+--CREATE TABLE bill 
+CREATE TABLE IF NOT EXISTS bill (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    purchase_datetime DATETIME NOT NULL,
+    cachier_id INTEGER NOT NULL,
+    customer_id INTEGER REFERENCES customer(id),
+);
+
+--DROP TABLE BILL_LINE
+CREATE TABLE IF NOT EXISTS bill_line (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    bill_id INTEGER REFERENCES bill(id),
+    product_id INTEGER REFERENCES product(id),
+    quantity DECIMAL(10,2)
+);
