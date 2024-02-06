@@ -70,3 +70,5 @@ if __name__ == "__main__":
             find_by(connector, cursor, "email")
 
     connector.close()
+
+#Kad paleisti programą naudojame ->   python PTU20_live\db_py\zmones.py
